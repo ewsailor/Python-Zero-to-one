@@ -1,0 +1,5 @@
+s = input()  # 使用者輸入 'Python'
+
+s = 'Hello' + ' ' + s
+
+print(s)  # 結果印出 Hello Python
