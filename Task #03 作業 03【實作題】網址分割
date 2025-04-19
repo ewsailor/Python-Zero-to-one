@@ -1,0 +1,4 @@
+s = "https://www.facebook.com/dscareer"
+parts = s.split("/")  # 以 '/' 分割字串
+result = parts[2]     # 取出第三個元素，即 'www.facebook.com'
+print(result)         # 輸出 'www.facebook.com' 
