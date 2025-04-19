@@ -1,0 +1,10 @@
+x = input("請輸入一個正整數：") # 4
+
+if x.isdigit():  
+    n = int(x) 
+    f = 1 
+    for i in range(1, n + 1):
+        f *= i  # f = f * i
+    print(f) 
+else:
+    print(f"{x} 並非正整數無法運算，請輸入正整數")
