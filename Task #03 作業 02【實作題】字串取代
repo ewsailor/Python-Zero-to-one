@@ -1,0 +1,4 @@
+s = "The company is not that poor ! "
+x = s.replace( "not that poor " , "good")
+ 
+print(x) 
