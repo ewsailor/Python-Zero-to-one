@@ -1,0 +1,38 @@
+x = input("請輸入一個正整數：") # 20
+# 不使用 x = int(input("請輸入一個正整數："))，因為如果輸入 3.3，回傳 ValueError: invalid literal for int() with base 10: '3.3'
+
+def isPrime(n, show_result=False): # 判斷 n 是否為質數
+    # 定義一個內部函式，用來顯示訊息
+    def show_msg(msg):
+        if show_result:
+            print(msg)
+
+    try:
+        n = int(n) # 這行如果輸入錯誤，就會跳到下面的 except
+        if n <= 1:
+            show_msg(f"{n} 不是質數")
+            return False
+        
+        for i in range(2, int(n ** 0.5) + 1): # 最多只檢查到 sqrt(n)
+            if n % i == 0:
+                show_msg(f"{n} 不是質數")
+                return False
+        
+        show_msg(f"{n} 是質數")
+        return True
+    except ValueError:
+        show_msg("輸入不是正整數，請重新輸入")
+        return False
+
+# 檢查輸入的數字
+isPrime(x, True)
+
+def primes(n): # 回傳小於 n 的質數：2 到 n 之間的所有質數
+    try:
+        n = int(n)
+        return [i for i in range(2, n) if isPrime(i)]
+    except ValueError:
+        return False
+
+f = primes(x) 
+print(f, end=' ') # 2, 3, 5, 7, 11, 13, 17, 19
